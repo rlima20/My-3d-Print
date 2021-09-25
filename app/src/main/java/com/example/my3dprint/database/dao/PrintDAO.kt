@@ -1,5 +1,6 @@
 package com.example.my3dprint.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.my3dprint.model.PartFromPrint
 import com.example.my3dprint.model.Print
@@ -12,7 +13,7 @@ interface PrintDAO {
     fun getPrintsWithParts(): List<PartFromPrint>
 
     @Query("SELECT * FROM Print ORDER BY printId ASC")
-    fun getAllPrints(): List<Print>
+    fun getAllPrints(): LiveData<List<Print>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun savePrint(print: Print)

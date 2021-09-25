@@ -1,5 +1,6 @@
 package com.example.my3dprint.repository
 
+import androidx.lifecycle.LiveData
 import com.example.my3dprint.database.dao.PrintDAO
 import com.example.my3dprint.model.PartFromPrint
 import com.example.my3dprint.model.Print
@@ -10,7 +11,7 @@ class PrintRepository(private val dao: PrintDAO) {
         return dao.getPrintsWithParts()
     }
 
-    fun getAllPrints(): List<Print> {
+    fun getAllPrints(): LiveData<List<Print>> {
         return dao.getAllPrints()
     }
 
