@@ -28,6 +28,3 @@ data class PartFromPrint(
     )
     val parts: List<Part>
 )
-
-
-

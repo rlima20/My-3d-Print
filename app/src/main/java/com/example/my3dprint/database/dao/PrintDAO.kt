@@ -1,9 +1,8 @@
 package com.example.my3dprint.database.dao
 
-import androidx.room.Dao
-import androidx.room.Query
-import androidx.room.Transaction
+import androidx.room.*
 import com.example.my3dprint.model.PartFromPrint
+import com.example.my3dprint.model.Print
 
 @Dao
 interface PrintDAO {
@@ -11,4 +10,13 @@ interface PrintDAO {
     @Transaction
     @Query("SELECT * FROM Part")
     fun getPrintsWithParts(): List<PartFromPrint>
+
+    @Query("SELECT * FROM Print ORDER BY printId ASC")
+    fun getAllPrints(): List<Print>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun savePrint(print: Print)
+
+    @Delete
+    fun remove(print: Print)
 }
