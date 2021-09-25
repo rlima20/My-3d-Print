@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listPrints">
+
+    <fragment
+        android:id="@+id/listPrints"
+        android:name="com.example.my3dprint.ListPrints"
+        android:label="Lista de Impressões"
+        tools:layout="@layout/list_print"
+        xmlns:tools="http://schemas.android.com/tools"/>
+</navigation>
