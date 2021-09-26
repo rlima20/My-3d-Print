@@ -9,7 +9,5 @@ class PrintListViewModel(
     private val repository: PrintRepository
 ): ViewModel() {
 
-    fun getAllPrints(): LiveData<List<Print>>{
-        return repository.getAllPrints()
-    }
+    fun getAllPrints(): LiveData<List<Print>> = repository.getAllPrints()
 }
