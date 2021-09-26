@@ -11,9 +11,7 @@ class PrintRepository(private val dao: PrintDAO) {
         return dao.getPrintsWithParts()
     }
 
-    fun getAllPrints(): LiveData<List<Print>> {
-        return dao.getAllPrints()
-    }
+    fun getAllPrints(): LiveData<List<Print>> = dao.getAllPrints()
 
     fun save(print: Print){
         dao.savePrint(print)

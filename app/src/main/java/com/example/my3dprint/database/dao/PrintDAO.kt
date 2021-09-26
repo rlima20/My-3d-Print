@@ -12,11 +12,14 @@ interface PrintDAO {
     @Query("SELECT * FROM Part")
     fun getPrintsWithParts(): List<PartFromPrint>
 
-    @Query("SELECT * FROM Print ORDER BY printId ASC")
+    @Query("SELECT * FROM Print")
     fun getAllPrints(): LiveData<List<Print>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun savePrint(print: Print)
+
+    @Insert
+    fun salva(vararg print: Print)
 
     @Delete
     fun remove(print: Print)

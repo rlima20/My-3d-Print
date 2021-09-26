@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.my3dprint.R
 import com.example.my3dprint.model.Print
+import kotlinx.android.synthetic.main.item_print.view.*
 
 class PrintListAdapter(
     private val context: Context,
@@ -46,6 +47,7 @@ class PrintListAdapter(
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         private lateinit var print: Print
+        private val printDescription by lazy{ itemView.textViewPrintDescription}
 
         init{
             itemView.setOnClickListener{
@@ -57,6 +59,7 @@ class PrintListAdapter(
 
         fun linkTogether(print: Print){
             this.print = print
+            printDescription.text = print.printDescription
         }
     }
 }
